@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="moment.min.js"></script>
+    <title>Moment.js</title>
+</head>
+<body>
+    <h1>DATE FUNCTIONS USING MOMENT LIBRARY</h1>
+    <h2>GET YEAR</h2>
+
+    <p id="year"></p>
+
+    <h2>GET MONTH</h2>
+    <p id="month"></p>
+
+    <h2>GET DATE</h2>
+    <p id="date"></p>
+
+    <h2>GET DAY</h2>
+    <p id="day"></p>
+
+    <script>
+        console.log(moment());
+
+        document.getElementById("year").innerHTML = "Current year is " + moment().year();
+
+        document.getElementById("day").innerHTML = "Current day is " + moment().format('dddd');
+
+        document.getElementById("date").innerHTML = "Current date is " + moment().format('MMMM Do YYYY');
+
+        document.getElementById("month").innerHTML = "Current date is " + moment().format('MMM');
+
+    </script>
+</body>
+</html>

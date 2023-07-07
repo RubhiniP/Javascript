@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <h1>DATE FUNCTIONS</h1>
+    <h2>GET & SET FULL YEAR</h2>
+    <p id="fullYear"></p>
+
+    <h2>GET MONTH</h2>
+    <p id="month"></p>
+
+    <h2>GET DATE</h2>
+    <p id="date"></p>
+
+    <h2>GET DAY</h2>
+    <p id="day"></p>
+
+    <h2>GET HOURS</h2>
+    <p id="hours"></p>
+
+    <script>
+        const date = new Date();
+        date.setFullYear(2023);
+        document.getElementById("fullYear").innerHTML = "Current year is using set function: " + date + "<br>Current year  using get function: " + date.getFullYear();
+
+        const Months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.getElementById("month").innerHTML = "Current month is " + Months[date.getMonth()];
+
+        document.getElementById("date").innerHTML = "Today's date is " + date.getDate();
+
+        const days = [ "Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        document.getElementById("day").innerHTML = "Today is " + days[date.getDay()];
+
+        document.getElementById("hours").innerHTML = "Current time(HH) is " + date.getHours();
+    </script>
+</body>
+</html>
