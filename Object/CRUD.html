@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <h2>OBJECTS</h2>
+    <h3>OBJECT CREATING USING LITERALS</h3>
+    <p id="literal"></p>
+
+    <h3>OBJECT CREATING USING NEW KEYWORD</h3>
+    <p id="new"></p>
+
+    <h3>OBJECT METHODS</h3>
+    <p id="method"></p>
+
+    <h3>DELETING A PROPERTY</h3>
+    <p id="delete"></p>
+
+    <h3>OBJECT CONSTRUCTOR</h3>
+    <p id="cons"></p>
+
+    <h3>OBJECT PROTOTYPE</h3>
+    <p id="prototype"></p>
+
+    <script>
+        //creating an object using literal
+        const personalDetails = {
+            firstName : "Rubhini",
+            lastName : "Prakash",
+            age : 20
+        };
+
+        //creating an object using new keyword
+        const educationalDetails = new Object();
+        educationalDetails.id = "20BCS079";
+        educationalDetails.dept = "CSE";
+
+        //reading object created using literal
+        document.getElementById("literal").innerHTML = personalDetails.firstName + " " + personalDetails.lastName;
+
+        //reading object created using new keyword
+        document.getElementById("new").innerHTML = educationalDetails.id + "<br>" + educationalDetails.dept;
+
+        //Adding properties to object
+        personalDetails.language = "English";
+
+        //Adding methods
+        personalDetails.name = function(){
+            return "Language of "+ this.firstName + " is " + this.language;
+        };
+        document.getElementById("method").innerHTML = personalDetails.name();
+
+        //deleting a property
+        delete personalDetails.language;
+        document.getElementById("delete").innerHTML = personalDetails.name();
+
+        //creating object using constructor
+        function Bio(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+        }
+
+        const myBio = new Bio("Rubhini", "Prakash");
+
+        document.getElementById("cons").innerHTML =
+        "My Name is " + myBio.firstName + " " + myBio.lastName;
+
+        //Object prototype
+        Bio.prototype.age = 20;
+        document.getElementById("prototype").innerHTML = myBio.age;
+        
+       
+    </script>
+</body>
+</html>

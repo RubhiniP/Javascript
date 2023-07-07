@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+<h1>ERROR HANDLING</h1>
+<h2>CHECK FOR ELIGIBILITY</h2>
+<form>
+    <label>Please enter your age:</label><br>
+    <input type="text" id="age"><br><br>
+
+    <button id="myBtn" type="button" onclick="check()">Submit</button><br>
+
+    <p id="display"></p>
+
+    <script>
+        function check(){
+                const message = document.getElementById('display');
+                message.innerHTML = "";
+                var age=document.getElementById('age').value;
+                try{
+                    if(age.length == 0) throw "Please enter your age. Age can't be empty!";
+                    if(age<18 || age>30) throw "Sorry! You are not eligible to participate.";
+                    if(age>=18 || age<=30) throw "You are eligible to participate!"
+                }catch(err){
+                    message.innerHTML = err;
+                }
+            }
+    </script>
+</form>
+
+</body>
+</html>

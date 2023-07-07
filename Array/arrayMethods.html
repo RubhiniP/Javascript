@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>ARRAY METHODS</h1>
+    <h2>Length</h2>
+    <p id="length"></p>
+
+    <h2>toString()</h2>
+    <p id="str"></p>
+
+    <h2>PUSH AND POP</h2>
+    <p id="push"></p>
+    <p id="pop"></p>
+
+    <h2>SPLICE</h2>
+    <p id="splice"></p>
+
+    <h2>SLICE</h2>
+    <p id="slice"></p>
+
+    <h2>SHIFT AND UNSHIFT</h2>
+    <p id="shift"></p>
+    <p id="unshift"></p>
+
+    <h2>JOIN</h2>
+    <p id="join"></p>
+
+    <h2>CONCATENATE TWO ARRAYS</h2>
+    <p id="concat"></p>
+
+    <h2>DELETE</h2>
+    <p id="delete"></p>
+
+    <script>
+        const departments = ["CSE", "ECE", "EEE", "CE", "ME"];
+        document.getElementById("length").innerHTML = departments.length;
+
+        document.getElementById("str").innerHTML = departments.toString();
+
+        let x = departments.push("BT");
+        document.getElementById("push").innerHTML = "New length: " + x + "<br>" + departments;
+
+        document.getElementById("pop").innerHTML = "Popped element is: " + departments.pop();
+
+        departments.splice(2,0,"IT");
+        document.getElementById("splice").innerHTML = "Adding new elements at index:2 with 0 removal of elements: " + departments;
+
+        document.getElementById("slice").innerHTML = "Slicing from index:1 = " + departments.slice(1);
+
+        document.getElementById("shift").innerHTML = "Shifted element: " + departments.shift();
+
+        departments.unshift("AERO");
+        document.getElementById("unshift").innerHTML = "New length: " + x + "<br>" + departments;
+
+        let newDept = departments.join(" * ");
+        document.getElementById("join").innerHTML = newDept;
+
+        let departments2 = ["AUTO"];
+        document.getElementById("concat").innerHTML = "Concatenated array: " + departments.concat(departments2);
+
+        delete departments[departments.length - 1];
+        document.getElementById("delete").innerHTML = departments;
+
+    </script>
+</body>
+</html>

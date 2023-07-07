@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+</head>
+<body>
+    <h1>EVENT LOOP</h1>
+    <p id="eventLoop"></p>
+
+    <script>
+        const date=new Date();
+        function third(){
+            return date.getFullYear();
+        }
+        function second(){
+            return third();
+        }
+        function first(){
+            return second();
+        }
+        let x = first();
+        document.getElementById("eventLoop").innerHTML = "Current year is " + x;
+    </script>
+</body>
+</html>
