@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Funcitons</title>
+</head>
+<body>
+    <h4>STRING FUNCTIONS</h4>
+    <h3>Using includes() function</h3>
+    <p>Checking if the given text has the word "learn" in it or not: </p>
+    <p id="includes"></p>
+
+    <script>
+        const topic = "Javascript is very interesting to learn";
+        document.getElementById("includes").innerHTML = topic.includes("learn");
+    </script>
+
+    <h3>Using startWith() function</h3>
+    <p>Checking if the given text starts with the word "Javascript" or not: </p>
+    <p id="start"></p>
+
+    <script>
+        document.getElementById("start").innerHTML = topic.startsWith("Javascript");
+    </script>
+
+    <h3>Using endWith() function</h3>
+    <p>Checking if the given text end with the word "great" or not: </p>
+    <p id="end"></p>
+
+    <script>
+        document.getElementById("end").innerHTML = topic.endsWith("very");
+    </script>
+
+</body>
+</html>

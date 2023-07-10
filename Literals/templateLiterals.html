@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals</title>
+</head>
+<body>
+    <h3>TEMPLATE LITERALS</h3>
+    <h4>Template Literals for strings</h4>
+    <p id="literal"></p>
+
+    <script>
+        const lit = `My favourite book is "Wings of Fire"`;
+        document.getElementById("literal").innerHTML = lit;
+    </script>
+
+    <h4>MultiLine string</h4>
+    <p id="txt"></p>
+
+    <script>
+        const text = `Hi! I'm Rubhini.
+        I'm currently pursuing my Undergraduate Bachelor's degree in 
+        Computer Science and Engineering at KCT.`
+
+        document.getElementById("txt").innerHTML = text;
+    </script>
+
+    <h4>Expression interpolation</h4>
+    <form>
+        <label for="num1">Enter number 1 :</label><br><br>
+        <input type="number" step="10" id="num1" name="num1" placeholder="Enter any number"><br><br>
+
+        <label for="num2">Enter any number 2 :</label><br><br>
+        <input type="number" step="10" id="num2" name="num2" placeholder="Enter any number"><br><br>
+
+        <input type="button" value="Submit" onclick="display()">
+        </form>
+    
+        <p id="disp"></p>
+    
+        <script>
+            //string interpolation
+            function display(){
+                num1 = document.getElementById("num1").value;
+                num2 = document.getElementById("num2").value;
+                document.getElementById("disp").innerHTML = `The division of ${num1} and ${num2} is ` + (num1 / num2);
+            }
+        </script>
+
+        <h4>Tagged literals</h4>
+        <p id="tag"></p>
+
+        <script>
+            function taggedLiteral(name){
+                return `My name is ${name}, ${text}`;
+            }
+            document.getElementById("tag").innerHTML = taggedLiteral`Rubhini`;
+        </script>
+</body>
+</html>

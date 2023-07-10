@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules</title>
+</head>
+<body>
+    <h3>OBJECT ENTRIES</h3>
+    <p id="entries"></p>
+
+    <script>
+        let text = ""
+        const technology = ["React", "Node", "JS", "Angular"];
+        for (let tech of technology.entries()){
+            text += tech + "<br>";
+        }
+        document.getElementById("entries").innerHTML = text;
+    </script>
+
+    <h3>MODULES</h3>
+    <p id="named"></p>
+    <p id="default"></p>
+
+    <script type="module">
+        // import { fullName, dept } from "./details.js"; //named module
+        document.getElementById("named").innerHTML = "My name is and my department is ";
+
+        // import info from "./method.js";//default module
+        document.getElementById("default").innerHTML = info();
+    </script>
+
+</body>
+
+</html>

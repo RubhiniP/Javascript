@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions</title>
+</head>
+<body>
+    <h4>ARRAY FUNCTIONS</h4>
+    <h3>Using from()</h3>
+    <p>Constructing an array from a string. In this case: RUBHINI</p>
+    <p id="from"></p>
+
+    <script>
+        document.getElementById("from").innerHTML = Array.from("RUBHINI");
+    </script>
+
+    <h3>Using keys()</h3>
+    <p>Output displayed in console</p>
+
+    <script>
+        const stacks = ["React", "Node", "Angular"]
+        for (let x of stacks.keys()){
+            console.log(x);
+        }
+    </script>
+
+    <h3>Using find()</h3>
+    <p>Displaying the first value higher than 50 using find() method</p>
+    <p id="find"></p>
+
+    <script>
+        const score = [50, 39, 23, 90, 34];
+        const highest = score.find(function Maximum(value){
+            return value>50;
+        })
+        document.getElementById("find").innerHTML = highest;
+    </script>
+
+    <h3>Using findIndex()</h3>
+    <p>Displaying the index value of the first element higher than 50 using findIndex() method</p>
+    <p id="findIndex"></p>
+
+    <script>
+        const highestIndex = score.findIndex(function Maximum(value){
+            return value>50;
+        })
+        document.getElementById("findIndex").innerHTML = highestIndex;
+    </script>
+
+
+</body>
+</html>

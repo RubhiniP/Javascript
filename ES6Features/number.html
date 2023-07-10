@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Properties and Methods</title>
+</head>
+<body>
+    <h3>NUMBER PROPERTIES</h3>
+    <h4>EPSILON</h4>
+    <p id="epsilon"></p>
+
+    <script>
+        document.getElementById("epsilon").innerHTML = Number.EPSILON;
+    </script>
+
+    <h4>MIN_SAFE_INTEGER</h4>
+    <p id="min"></p>
+
+    <script>
+        document.getElementById("min").innerHTML = Number.MIN_SAFE_INTEGER;
+    </script>
+
+    <h4>MAX_SAFE_INTEGER</h4>
+    <p id="max"></p>
+
+    <script>
+        document.getElementById("max").innerHTML = Number.MAX_SAFE_INTEGER;
+    </script>
+
+    <h3>NUMBER METHODS</h3>
+    <h4>Using isInteger()</h4>
+    <p>Checking if the number is an integer or not</p>
+    <p id="check1"></p>
+
+    <script>
+        document.getElementById("check1").innerHTML = Number.isInteger(-Infinity);
+    </script>
+
+    <h4>Using isSafeInteger()</h4>
+    <p>Checking if the number is a safe integer or not</p>
+    <p id="check2"></p>
+
+    <script>
+        document.getElementById("check2").innerHTML = Number.isSafeInteger(-Infinity);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="moment.min.js"></script>
+    <title>ES6 Classes</title>
+</head>
+<body>
+    <h3>ES6 Classes</h3>
+    <p id="me"></p>
+
+    <h3>Class Inheritance</h3>
+    <p id="get"></p>
+
+    <h3>Class Static</h3>
+    <p>Accessing static method through class</p>
+    <p id="static"></p>
+
+    <p>Accessing static method through class object by passing class object as a parameter</p>
+    <p id="obj"></p>
+
+    <script>
+        class me{
+            constructor(name, dept){
+                this.name = name;
+                this.dept = dept;
+            }
+            calculateAge(year){
+                return moment().year() - year;
+            }
+            display(){
+                return "My name is " + this.name + "<br>My department is " + this.dept + "<br>I'm " + this.calculateAge(2002) + " years old.";
+            }
+        }
+
+        class XYZ extends me{
+            constructor(name, dept, company){
+                super(name, dept);//calling the parent constructor
+                this.company = company;
+            }
+
+            //getters
+            get companyName(){
+                return this.company;
+            }
+
+            //setters
+            set companyName(name){
+                this.company = name;
+            }
+
+            static greet(){
+                return this.name + "ians! Have a nice day!";
+            }
+
+
+        }
+
+        const details = new me("Rubhini", "CSE");
+        document.getElementById("me").innerHTML = details.display();
+        const xyzCompany = new XYZ("Rubhini", "CSE", "XYZ");
+        document.getElementById("get").innerHTML = xyzCompany.display() + "<br>I work at " + xyzCompany.companyName;
+        document.getElementById("static").innerHTML = XYZ.greet();
+        document.getElementById("obj").innerHTML = XYZ.greet(xyzCompany);
+        //document.getElementById("age").innerHTML = details.calculateAge(2002);
+    </script>    
+
+</body>
+</html>

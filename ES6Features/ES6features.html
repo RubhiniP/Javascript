@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Features</title>
+</head>
+<body>
+    <h2>ES6 FEATURES</h2>
+
+    <h3>Using let, const</h3>
+    <p id="LC"></p>
+    <p id="LC1"></p>
+
+    <script>
+        let x = 15;
+        const y = 20;
+        document.getElementById("LC").innerHTML = "Variable declared using let and const cannot be redeclared. let: " + x + " const: " + y;
+        x = x + 5;
+        document.getElementById("LC1").innerHTML = "Variable declared using let can be updated. let: " + x;
+    </script>
+
+    <h3>Using spread ... operator</h3>
+    <p id="spread"></p>
+
+    <script>
+        const adm = ['CSE', 'IT', 'ISE'];
+        const aBlock = ['ME', 'TXT'];
+        const cBlock = ['CE', 'ECE'];
+        const combined = [...adm, ...aBlock, ...cBlock];
+        document.getElementById("spread").innerHTML = "Blocks : " + combined;
+    </script>
+
+    <h3>Using for/of operator</h3>
+    <p id="forOf"></p>
+
+    <script>
+        const nos = [20, 40, 10, 30];
+        let sum = 0;
+        for (let no of nos){
+            sum += no;
+        }
+        document.getElementById("forOf").innerHTML = "Sum of all the numbers : " + sum;
+    </script>
+
+    <h3>Using Map Objects</h3>
+    <p id="map"></p>
+
+    <script>
+        const names = new Map([
+            ["Rubhini", 9.6],
+            ["Rohini", 7.99],
+            ["Prakash", 8.5]
+        ]);
+        document.getElementById("map").innerHTML = "Accessing the values using key. The value of {key:'Rubhini'} = " + names.get("Rubhini");
+    </script>
+
+    <h3>Using Set Objects</h3>
+    <p id="set"></p>
+
+    <script>
+        const colours = new Set();
+        colours.add("Blue");
+        colours.add("Green");
+        document.getElementById("set").innerHTML = "Size of the set is : " + colours.size;
+    </script>
+
+    <h3>Function Default Parameters</h3>
+    <p>Using arrow function to find sum of the numbers.</p>
+    <p>Using combination of template strings and string interpolation to print the result.</p>
+    <p>Default value of y is used as the value of y was not given while calling the function.</p>
+    <p id="default"></p>
+
+    <script>
+        let Sum  = (num1, num2 = 40) => `Sum of ${num1} and ${num2} is ` + (num1 + num2); 
+        document.getElementById("default").innerHTML = Sum(30);
+    </script>
+
+    <h3>Function REST Parameter</h3>
+    <p>Rest parameter lets you define arguments with no predefined size.</p>
+    <p id="rest"></p>
+
+    <script>
+    function sumOfNumbers(...args){
+	    let total = 0;
+        for (let arg of args){
+    	    total += arg;
+        }
+    return total;
+    }
+    document.getElementById("rest").innerHTML = "Sum of all numbers = " + sumOfNumbers(10,20,30,40,50);
+    </script>
+
+</body>
+</html>
