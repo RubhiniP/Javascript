@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC & AWAIT</title>
+</head>
+<body>
+<script>
+async function foo() {
+const result1 = new Promise((resolve) =>
+    setTimeout(() => resolve(console.log(1)), 3000),
+  );
+  const result2 = new Promise((resolve) =>
+    setTimeout(() => resolve(console.log(2)), 1000),
+  );
+}
+foo();
+
+async function display() {
+    const result = await new Promise(function(resolve){
+        setTimeout(function(){resolve(console.log("Implementing Async & Await"))});
+    });
+}
+display();
+
+</script>
+</body>
+</html>

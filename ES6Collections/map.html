@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+</head>
+<body>
+    <h3>Using Map Objects</h3>
+    <p id="map"></p>
+
+    <script>
+        const names = new Map([
+            ["Rubhini", 9.6],
+            ["Rohini", 7.99],
+            ["Prakash", 8.5]
+        ]);
+        document.getElementById("map").innerHTML = "Accessing the values using key. The value of {key:'Rubhini'} = " + names.get("Rubhini");
+    </script>    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+<body>
+    <h1>ARRAY</h1>
+
+    
+    <h2>forEach</h2>
+    <p id="forEach">Console output</p>
+
+    <h2>map</h2>
+    <p id="map"></p>
+
+    <script>
+        const arr = [30, 50, 33, 12, 40];
+        const double = arr.map( (val) => val*2 );
+        document.getElementById("map").innerHTML = double;
+
+        arr.forEach(function display(value){
+            console.log(value);
+        })
+    </script>
+
+    <h2>filter</h2>
+    <p id="filter"></p>
+
+    <script>
+        document.getElementById("filter").innerHTML = arr.filter( (val) => val>18 );
+    </script>
+
+    <h2>find</h2>
+    <p id="find"></p>
+
+    <script>
+        document.getElementById("find").innerHTML = arr.find( val => val>18 );
+    </script>
+
+    <h2>every</h2>
+    <p id="every"></p>
+
+    <script>
+        const result = arr.every( val => val>18 );
+        if(result)
+        document.getElementById("every").innerHTML = "All the elements passed."
+        else
+        document.getElementById("every").innerHTML = "All the elements didn't pass."
+    </script>
+
+    <h2>Length</h2>
+    <p id="length"></p>
+
+    <h2>toString()</h2>
+    <p id="str"></p>
+
+    <h2>PUSH AND POP</h2>
+    <p id="push"></p>
+    <p id="pop"></p>
+
+    <h2>SPLICE</h2>
+    <p id="splice"></p>
+
+    <h2>SLICE</h2>
+    <p id="slice"></p>
+
+    <h2>SHIFT AND UNSHIFT</h2>
+    <p id="shift"></p>
+    <p id="unshift"></p>
+
+    <h2>JOIN</h2>
+    <p id="join"></p>
+
+    <h2>CONCATENATE TWO ARRAYS</h2>
+    <p id="concat"></p>
+
+    <h2>DELETE</h2>
+    <p id="delete"></p>
+
+    <script>
+        const departments = ["CSE", "ECE", "EEE", "CE", "ME"];
+        document.getElementById("length").innerHTML = departments.length;
+
+        document.getElementById("str").innerHTML = departments.toString();
+
+        let x = departments.push("BT");
+        document.getElementById("push").innerHTML = "New length: " + x + "<br>" + departments;
+
+        document.getElementById("pop").innerHTML = "Popped element is: " + departments.pop();
+
+        departments.splice(2,0,"IT");
+        document.getElementById("splice").innerHTML = "Adding new elements at index:2 with 0 removal of elements: " + departments;
+
+        document.getElementById("slice").innerHTML = "Slicing from index:1 = " + departments.slice(1);
+
+        document.getElementById("shift").innerHTML = "Shifted element: " + departments.shift();
+
+        departments.unshift("AERO");
+        document.getElementById("unshift").innerHTML = "New length: " + x + "<br>" + departments;
+
+        let newDept = departments.join(" * ");
+        document.getElementById("join").innerHTML = newDept;
+
+        let departments2 = ["AUTO"];
+        document.getElementById("concat").innerHTML = "Concatenated array: " + departments.concat(departments2);
+
+        delete departments[departments.length - 1];
+        document.getElementById("delete").innerHTML = departments;
+
+    </script>
+</body>
+</html>
